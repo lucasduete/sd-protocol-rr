@@ -25,13 +25,15 @@ public final class Server implements ServerInterface {
     public void start() {
 
         try {
-            this.socket = new DatagramSocket(22222);
+            while (true) {
+                this.socket = new DatagramSocket(22222);
 
-            byte[] msg = getRequest();
+                byte[] msg = getRequest();
 
-            byte[] reply = calculate(msg);
+                byte[] reply = calculate(msg);
 
-            sendReply(reply, this.clientHost, this.clientPort);
+                sendReply(reply, this.clientHost, this.clientPort);
+            }
 
         } catch (SocketException ex) {
             ex.printStackTrace();
@@ -77,6 +79,7 @@ public final class Server implements ServerInterface {
             e.printStackTrace();
         }
         cliente.close();
+        this.socket.close();
     }
 
     private byte[] convertToByte(Integer value) {
