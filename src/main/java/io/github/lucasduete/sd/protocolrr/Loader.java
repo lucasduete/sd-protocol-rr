@@ -6,9 +6,7 @@ public class Loader {
 
     public static void main(String[] args) {
 
-        new Thread(() -> {
-            new Server().start();
-        }).start();
+        new Thread(() -> new Server().start()).start();
 
         try {
             Thread.sleep(100);
