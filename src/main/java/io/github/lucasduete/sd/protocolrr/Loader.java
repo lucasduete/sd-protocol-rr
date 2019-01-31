@@ -27,6 +27,6 @@ public class Loader {
         System.arraycopy(ByteBuffer.allocate(Integer.SIZE / 8).putInt(40).array(), 0, arguments, 4, 4);
 
         client.doOperation(remoteRef, 0, arguments);
-
     }
+
 }

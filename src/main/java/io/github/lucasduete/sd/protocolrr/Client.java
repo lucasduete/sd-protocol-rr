@@ -1,6 +1,5 @@
 package io.github.lucasduete.sd.protocolrr;
 
-import io.github.lucasduete.sd.protocolrr.RemoteRef;
 import io.github.lucasduete.sd.protocolrr.interfaces.ClientInterface;
 
 import java.io.IOException;
